@@ -1,20 +1,22 @@
-# FINAL PROJECT SDEV220
+# Install Mysql on your computer
+# https://dev.mysql.com/downloads/installer/
+# pip install mysql
+# pip install mysql-connector
+# pip install mysql-connector-python 
 
-import mysql.connector   # MySQL Database Management Library
+import mysql.connector
 
-database = mysql.connector.connect(
+dataBase = mysql.connector.connect(
+	host = 'localhost',
+	user = 'root',
+	passwd = 'password123'
 
-        host = 'localhost',
-        user = 'root',
-        passwd = '32551766767asdf',
+	)
 
-        )
-
-# Our cursor object to navigate the database
-cursorObject = database.cursor()
+# prepare a cursor object
+cursorObject = dataBase.cursor()
 
 # Create a database
-cursorObject.execute("CREATE DATABASE golfco")
+cursorObject.execute("CREATE DATABASE elderco")
 
-# Printing a test message.
 print("All Done!")
