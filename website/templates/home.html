@@ -6,7 +6,43 @@
 
 {%if user.is_authenticated %}
 
-<h1>Hello World</h1>
+<h1>Current Member Records:</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    
+    </tr>
+  </tbody>
+</table>
+	 
+
+
+{% if records %}
+
+	{% for record in records %}
+		{{ record.first_name }}
+		{{ record.last_name }}
+		{{ record.address }}
+		{{ record.city }}
+		{{ record.state }}
+		{{ record.zipcode }}
+		{{ record.email }}
+		{{ record.phone }}
+		{{ record.subscription_type}}
+		{{ record.created_at }}
+		{{ record.id }}
+	{% endfor %}
+
+{% endif %}
 
 {% else %}
 

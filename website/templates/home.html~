@@ -6,6 +6,27 @@
 
 {%if user.is_authenticated %}
 
+<h1>Current Member Records:</h1>
+{% if records %}
+
+	{% for record in records %}
+		{{ record.first_name }}
+		{{ record.last_name }}
+		{{ record.address }}
+		{{ record.city }}
+		{{ record.state }}
+		{{ record.zipcode }}
+		{{ record.email }}
+		{{ record.phone }}
+		{{ record.subscription_type}}
+		{{ record.created_at }}
+		{{ record.id }}
+	{% endfor %}
+
+{% endif %}
+
+{% else %}
+
 	<!-- Our login form uses bootstrap, but how can we make the font smaller? -->
 	<h1>Login<h1>
 	<form method="POST" action="{% url 'home' %}">
