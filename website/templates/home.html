@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+
+{%if user.is_authenticated %}
+
+<h1>Hello World</h1>
+
+{% else %}
+
+	<!-- Our login form uses bootstrap, but how can we make the font smaller? -->
+	<h1>Login<h1>
+	<form method="POST" action="{% url 'home' %}">
+		{% csrf_token %}
+		<form>
+			<!-- Our username and password input, adding a required tag so
+			site doesn't have an issue and users may input their password -->
+  			<div class="form-group">
+    				<input type="text" class="form-control" name = "username", 
+				placeholder = "Username" required>
+  			</div>
+
+ 		 	<div class="form-group">
+    				<input type="password" class="form-control" name = "password",
+				placeholder = "Password" required>
+ 	 		</div>
+
+			<br/>
+
+  			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	
+	</form>
+
+</div>
+
+{% endif %}
+{% endblock %}

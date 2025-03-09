@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'golfco',
         'USER': 'root',
-        'PASSWORD': '32551766767asdf'
+        'PASSWORD': '32551766767asdf',
         'HOST': 'localhost',
         'PORT': '3306',
 

@@ -80,6 +80,8 @@ DATABASES = {
     'default': {
 
         # Changing our backend from sqllite3 to mysql
+        # Below is our login information we will need
+        # to connect to our MySQL instance.
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'golfco',
         'USER': 'root',
